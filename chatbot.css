@@ -1,0 +1,57 @@
+.topstrip{
+    width:99%;
+    overflow-y: scroll;
+    position:fixed;
+    top:0px;
+    height:50px;
+    background-color: #810a09;
+    color:white;
+    text-align: right;
+    font-size: 16px;
+    font-family: Georgia;
+}
+.topbar{
+    display:block;
+    width:100%;
+    overflow-y: scroll;
+    position:fixed;
+    top:50px;
+    bottom:65px;
+}
+.rounded-div-bot{
+    display:inline-block;
+    clear:left;
+    max-width:80%;
+    border-radius: 5px;
+    border:solid 1px #2fd432;
+    background-color: #6efd6e;
+    float:right;
+    margin: 10px;
+    padding:5px;
+    min-height: 1em;
+	font-size: 15px;
+}
+.rounded-div{
+    display:inline-block;
+    clear:right;
+    max-width:80%;
+    border-radius: 5px;
+    margin: 10px;
+    padding:5px;
+    border:solid 1px #0d1ee6;
+    background-color: #c1c1ff;
+    float:left;
+	font-size: 15px;
+}
+.inputbox{
+    outline:none;
+    width:98%;
+    height:40px;
+    position:fixed;
+    bottom:25px;
+}
+
+@media only screen and (max-width: 600px) {
+  div{position:relative;
+  }
+}

@@ -48,6 +48,18 @@ if($method == 'POST'){
 		$poojaBookingTime = $json->result->parameters->PoojaBookingTime;
 		$combinedInputForPoojaBooking = "PoojaName=".urlencode($poojaName)."&PoojaBookingDate=".urlencode($poojaBookingDate)."&PoojaBookingTime=".urlencode($poojaBookingTime)."&Name=".urlencode($name)."&Message=".urlencode($message)."&ContactNumber=".urlencode($number);
 	}
+	
+	if(strcasecmp( $actionName, 'QuickOrder' ) == 0 ){
+		$c1Items = $json->result->parameters->C1Items;
+		$c2Items = $json->result->parameters->C2Items;
+		$c3Items = $json->result->parameters->C3Items;
+		$c4Items = $json->result->parameters->C4Items;
+		$otherItems = $json->result->parameters->OtherItems;
+		$combinedInputForQuickOrder = "Name=".urlencode($name)."&C1Items=".urlencode($c1Items)."&C2Items=".urlencode($c2Items)."&C3Items=".urlencode($c3Items)."&C4Items=".urlencode($c4Items)."&OtherItems=".urlencode($otherItems);
+	}
+	
+	
+	
      switch ($actionName) {
 	    case 'Option1ForPriest':
 		    $url = "https://script.google.com/macros/s/AKfycbzSENsORHDhS-qsT1wobnIoYqULjeHyrfDr24FU9kWSKQXTaw/exec?$combinedInput";		
@@ -106,6 +118,18 @@ if($method == 'POST'){
 			}
 			else {
 			$speech = "I'm sorry and can n't save your booking details. Could you please try by typing booking pooja again? Thank you.";
+			}
+            break;
+			
+		case 'QuickOrder':
+		   	$url = "https://script.google.com/macros/s/AKfycbweXjNHSIitKiRg7mbp9SwVrEZkbX5LTtQRF1jEsFh2k4qc2A/exec?$combinedInputForQuickOrder";
+			$payLoad = file_get_contents($url);
+			$pos = strpos($payLoad,"success");
+			if($pos!==false) {
+            $speech = "Thank you. Your order information has been sent to our ordering representative and our ordering representative will call you soon to confirm your order to process. Your ordering details are Name : $name, Items are  : $c1Items, $c2Items, $c3Items, c4Items, $otherItems. Do you have any question to ask? Please ask me now or say bye bye.";
+			}
+			else {
+			$speech = "I'm sorry and can n't save your ordering details. Could you please try by typing quick order again? Thank you.";
 			}
             break;
          

@@ -24,6 +24,12 @@ if($method == 'POST'){
 		  case 'CollectFeedback':
 		        $reTypeWord = "feedback";
 		        break;
+		 case 'PoojaBooking':
+		        $reTypeWord = "booking pooja";
+		        break;
+		case 'QuickOrder':
+		        $reTypeWord = "quick order";
+		        break;
 		  default:
 		        break;
 	 }

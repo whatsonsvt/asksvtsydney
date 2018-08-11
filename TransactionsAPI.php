@@ -133,7 +133,7 @@ if($method == 'POST'){
 			$resultArray = json_decode($payLoad, true);
 			$pos = strpos($payLoad,"success");
 			if($pos!==false) {
-            $speech = "Thank you. Your Queue Order number is $resultArray['row']. Your order information has been sent to our ordering representative and our ordering representative will call you soon to confirm your order to process. Your ordering details are Name : $name, Items are  : $c1Items, $c2Items, $c3Items, $c4Items, $otherItems. Do you have any question to ask? Please ask me now or say bye bye.";
+            $speech = "Thank you. Your Queue Order number is $resultArray->{'row'}. Your order information has been sent to our ordering representative and our ordering representative will call you soon to confirm your order to process. Your ordering details are Name : $name, Items are  : $c1Items, $c2Items, $c3Items, $c4Items, $otherItems. Do you have any question to ask? Please ask me now or say bye bye.";
 			}
 			else {
 			$speech = "I'm sorry and can n't save your ordering details. Could you please try by typing quick order again? Thank you.";

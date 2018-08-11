@@ -130,7 +130,7 @@ if($method == 'POST'){
 		case 'QuickOrder':
 		   	$url = "https://script.google.com/macros/s/AKfycbweXjNHSIitKiRg7mbp9SwVrEZkbX5LTtQRF1jEsFh2k4qc2A/exec?$combinedInputForQuickOrder";
 			$payLoad = file_get_contents($url);
-			$resultArray = $array = json_decode($payLoad, true);
+			$resultArray = json_decode($payLoad, true);
 			$pos = strpos($payLoad,"success");
 			if($pos!==false) {
             $speech = "Thank you. Your Queue Order number is $resultArray['row']. Your order information has been sent to our ordering representative and our ordering representative will call you soon to confirm your order to process. Your ordering details are Name : $name, Items are  : $c1Items, $c2Items, $c3Items, $c4Items, $otherItems. Do you have any question to ask? Please ask me now or say bye bye.";

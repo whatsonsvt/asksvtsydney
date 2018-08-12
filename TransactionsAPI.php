@@ -134,7 +134,7 @@ if($method == 'POST'){
 			break;
          
         default:
-            $speech = "I'm Sorry, I didn't get that. Please ask me something else.";
+            $speech = "I'm Sorry, I didn't get that. Please ask me something else or type help to get more information.";
             break;
     }
  

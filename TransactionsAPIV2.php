@@ -8,8 +8,8 @@ if($method == 'POST'){
     $json = json_decode($requestBody);
  
     // Get All Parameters values
-	$actionName = $json->result->action;
-	$confirmMessage =  $json->result->parameters->ConfirmMessage;
+	$actionName = $json->queryResult->action;
+	$confirmMessage =  $json->queryResult->parameters->ConfirmMessage;
 	if(strcasecmp( $confirmMessage, 'no' ) == 0 ){
 	 switch ($actionName) {
 		  case 'Option1ForPriest':
@@ -42,25 +42,25 @@ if($method == 'POST'){
 	exit(0);
 	}
 	if(strcasecmp( $actionName, 'CollectFeedback' ) != 0 ){
-	$name =  $json->result->parameters->Name;
-	$number = $json->result->parameters->ContactNumber;
-	$message = $json->result->parameters->Message;
+	$name =  $json->queryResult->parameters->Name;
+	$number = $json->queryResult->parameters->ContactNumber;
+	$message = $json->queryResult->parameters->Message;
 	$combinedInput = "Name=".urlencode($name)."&Message=".urlencode($message)."&ContactNumber=".urlencode($number);
 	}
 	
 	if(strcasecmp( $actionName, 'PoojaBooking' ) == 0 ){
-		$poojaName = $json->result->parameters->PoojaName;
-		$poojaBookingDate = $json->result->parameters->PoojaBookingDate;
-		$poojaBookingTime = $json->result->parameters->PoojaBookingTime;
+		$poojaName = $json->queryResult->parameters->PoojaName;
+		$poojaBookingDate = $json->queryResult->parameters->PoojaBookingDate;
+		$poojaBookingTime = $json->queryResult->parameters->PoojaBookingTime;
 		$combinedInputForPoojaBooking = "PoojaName=".urlencode($poojaName)."&PoojaBookingDate=".urlencode($poojaBookingDate)."&PoojaBookingTime=".urlencode($poojaBookingTime)."&Name=".urlencode($name)."&Message=".urlencode($message)."&ContactNumber=".urlencode($number);
 	}
 	
 	if(strcasecmp( $actionName, 'QuickOrder' ) == 0 ){
-		$c1Items = $json->result->parameters->C1Items;
-		$c2Items = $json->result->parameters->C2Items;
-		$c3Items = $json->result->parameters->C3Items;
-		$c4Items = $json->result->parameters->C4Items;
-		$otherItems = $json->result->parameters->OtherItems;
+		$c1Items = $json->queryResult->parameters->C1Items;
+		$c2Items = $json->queryResult->parameters->C2Items;
+		$c3Items = $json->queryResult->parameters->C3Items;
+		$c4Items = $json->queryResult->parameters->C4Items;
+		$otherItems = $json->queryResult->parameters->OtherItems;
 		$combinedInputForQuickOrder = "Name=".urlencode($name)."&C1Items=".urlencode($c1Items)."&C2Items=".urlencode($c2Items)."&C3Items=".urlencode($c3Items)."&C4Items=".urlencode($c4Items)."&OtherItems=".urlencode($otherItems);
 	}
 	
@@ -102,7 +102,7 @@ if($method == 'POST'){
 			}
             break;
 		case 'CollectFeedback':
-		    $message = $json->result->parameters->Message;
+		    $message = $json->queryResult->parameters->Message;
 			$messageWithEncode = urlencode($message);
 			$url = "https://script.google.com/macros/s/AKfycbxr0YnNZbNx-fazOXAU1MR3D-AKveizGE4iLFUJ33LYckiDCg/exec?Message=$messageWithEncode";
 			$payLoad = file_get_contents($url);

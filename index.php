@@ -1,5 +1,15 @@
 <html>
 <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118751810-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-118751810-1');
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -10,7 +20,7 @@
     </head>
 <body>
 
-<div class="topstrip" id="topstrip"><a href="http://www.svtsydney.org" style="color:#d3d3d3" target="_blank">SVT Sydney Chatbot</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<div class="topstrip" id="topstrip"><a href="http://www.svtsydney.org/chatbot" style="color:#d3d3d3">SVT Sydney Virtual Assistant</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.svtsydney.org" style="color:#d3d3d3" target="_blank">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;</div>
 <div class="topbar" id="chat-text">
 </div>
 <form>

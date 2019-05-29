@@ -20,7 +20,7 @@
     </head>
 <body>
 
-<div class="topstrip" id="topstrip"><a href="http://www.svtsydney.org/chatbot" style="color:#d3d3d3">SVT Sydney Virtual Assistant</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.svtsydney.org" style="color:#d3d3d3" target="_blank">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<div class="topstrip" id="topstrip"><a href="http://www.svtsydney.org/ask/" style="color:#d3d3d3">SVT Sydney Virtual Assistant</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.svtsydney.org" style="color:#d3d3d3" target="_blank">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;</div>
 <div class="topbar" id="chat-text">
 </div>
 <form>

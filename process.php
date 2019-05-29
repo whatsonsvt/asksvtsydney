@@ -9,7 +9,7 @@ try {
         $ch = curl_init('https://api.api.ai/v1/query?v='.$v);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: Bearer dc1319d7431d4989a52c43eccae1234a'));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: Bearer 6965131deda64cf1a74076db916458a8'));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = curl_exec($ch);
         echo $result;

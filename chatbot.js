@@ -2,7 +2,7 @@
 me.avatar = "me.png";
 
 var you = {};
-you.avatar = "you.png";
+you.avatarsvt = "you.png";
 
 function formatAMPM(date) {
     var hours = date.getHours();
@@ -30,7 +30,11 @@ function formatAMPM(date) {
             });
 			var displayDate = "<div class='rounded-div-bot'><small>" + date + "</small></div>";
 			answerdiv.append(displayDate);
+			var displayPerson = "<div class='avatarsvt'><img class='img-circle' style='width:100%;' src=" + you.avatarsvt +" /></div><br/><br/>";
+			var lineBreak = "<br/><br/><br/>";
+			$("#chat-text" ).append(displayPerson);
             $("#chat-text").append(answerdiv);
+			$("#chat-text" ).append(lineBreak);
             $("#message").focus();
             window.initialMessageDisplayed = true;
         }
@@ -68,7 +72,11 @@ function formatAMPM(date) {
 				
 				var displayDate = "<div class='rounded-div-bot'><small>" + date + "</small></div>";
 				answerdiv.append(displayDate);
+				var displayPerson = "<div class='avatarsvt'><img class='img-circle' style='width:100%;' src=" + you.avatarsvt +" /></div><br/><br/><br/>";
+				var lineBreak = "<br/><br/><br/>";
+				$("#chat-text" ).append(displayPerson);
                 $("#chat-text").append(answerdiv);
+				$("#chat-text" ).append(lineBreak);
 				 if(event){
                     var stylingDiv = jQuery('<div/>', {
                         html: $("#template").html(),
@@ -106,8 +114,12 @@ function showUserText(){
 	var date = formatAMPM(new Date());
 	var displayDate = "<div class='rounded-div'><small>" + date + "</small></div>";
 	div.append(displayDate);
+	var displayPerson = "<div class='avatar'><img class='img-circle' style='width:100%;' src=" + me.avatar +" /></div><br/><br/><br/>";
+	var lineBreak = "<br/><br/><br/><br/><br/><br/><br/><br/>";
+	$("#chat-text" ).append(displayPerson);
 	$("#chat-text" ).append(div);
-    $("#message").val('');
+	$("#chat-text" ).append(lineBreak);
+	$("#message").val('');
 }
  
 if(!String.linkify) {

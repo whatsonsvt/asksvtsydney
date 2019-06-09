@@ -26,7 +26,7 @@
 <form>
     <span style="width:100%;">
         <input class="inputbox"
-               placeholder="Ask something and press Enter..." id="message" name="date" value="">
+               placeholder="Ask something and press Go or Enter..." id="message" name="date" value="" autocomplete="off">
     </span>
     <input name="submit" type="hidden" value="Submit">
 </form>

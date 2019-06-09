@@ -103,7 +103,10 @@ function showUserText(){
         'class': "rounded-div",
         tabindex:1
     });
-    $("#chat-text" ).append(div);
+	var date = formatAMPM(new Date());
+	var displayDate = "<div class='rounded-div'><small>" + date + "</small></div>";
+	div.append(displayDate);
+	$("#chat-text" ).append(div);
     $("#message").val('');
 }
  

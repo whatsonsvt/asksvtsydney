@@ -115,7 +115,7 @@ function showUserText(){
 	var displayDate = "<div class='rounded-div'><small>" + date + "</small></div>";
 	div.append(displayDate);
 	var displayPerson = "<div class='avatar'><img class='img-circle' style='width:100%;' src=" + me.avatar +" /></div><br/><br/><br/>";
-	var lineBreak = "<br/><br/><br/><br/><br/><br/><br/><br/>";
+	var lineBreak = "<br/><br/><br/>";
 	$("#chat-text" ).append(displayPerson);
 	$("#chat-text" ).append(div);
 	$("#chat-text" ).append(lineBreak);
@@ -136,10 +136,10 @@ if(!String.linkify) {
  
         return this
             .replace(urlPattern,
-                '<a class="answerLink" style="color:#0000EE" target="_blank" href="$&">click here</a>')
+                '<a class="answerLink" style="color:white;font-weight:bold" target="_blank" href="$&">click here</a>')
             .replace(pseudoUrlPattern,
-                '$1<a class="answerLink" style="color:#0000EE" target="_blank" href="http://$2">click here</a>')
+                '$1<a class="answerLink" style="color:white;font-weight:bold" target="_blank" href="http://$2">click here</a>')
             .replace(emailAddressPattern,
-                '<a class="answerLink" style="color:#0000EE" href="mailto:$&">$&</a>');
+                '<a class="answerLink" style="color:white;font-weight:bold" href="mailto:$&">click here</a>');
     };
 }

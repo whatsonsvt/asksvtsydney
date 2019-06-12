@@ -43,12 +43,39 @@
 	color:black;
 }
 .inputbox{
-    outline:none;
-    width:98%;
+	 width:80%;
+     position: absolute;
+     bottom: 25px;
+     left: 10px;
+	 height:40px;
+	 font-size: 22px;
+    }
+
+.inputbutton{
+	width:20%;
     height:40px;
-    position:fixed;
+    position: absolute;
     bottom:25px;
 	font-size: 25px;
+	right: 20px;
+	color: white;
+	background-color:#880B09;
+}
+
+input::-webkit-input-placeholder {
+color: black !important;
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color: black !important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: black !important;  
+}
+ 
+input:-ms-input-placeholder {  
+color: black !important;  
 }
 .avatar{
     display:flex;

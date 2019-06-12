@@ -35,7 +35,7 @@ function formatAMPM(date) {
 			$("#chat-text" ).append(displayPerson);
             $("#chat-text").append(answerdiv);
 			$("#chat-text" ).append(lineBreak);
-            $("#message").focus();
+            
             window.initialMessageDisplayed = true;
         }
     });
@@ -87,7 +87,7 @@ function formatAMPM(date) {
                     }
                 }
                 $(answerdiv).focus();
-                $("#message").focus();
+                
                 try{
                     sendGAEvent('iFrame',guid,'botSays: '+obj.result.fulfillment.speech)
                 }
